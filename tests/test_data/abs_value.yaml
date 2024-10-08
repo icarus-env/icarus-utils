@@ -1,0 +1,13 @@
+PORTS:
+  - input:
+      direction: input
+      interface: int_number
+
+  - result:
+      direction: output
+      interface: int_number
+
+CONTRACTS:
+  - base:
+      assume: True
+      guarantee: result >= 0

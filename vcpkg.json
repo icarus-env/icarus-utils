@@ -1,0 +1,23 @@
+{
+  "name": "icarus",
+  "builtin-baseline": "3f530d4827b064f5894e94a8946473d40999826e",
+  "dependencies": [
+    "ryml", "spdlog"
+  ],
+  "overrides": [
+    {
+      "name": "ryml",
+      "version": "0.5.0"
+    },
+    {
+      "name": "spdlog",
+      "version": "1.14.1"
+    }
+  ],
+  "features": {
+    "test": {
+      "description": "Build Tests",
+      "dependencies": [ "gtest" ]
+    }
+  }
+}

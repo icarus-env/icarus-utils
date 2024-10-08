@@ -1,0 +1,36 @@
+ROOT: SimpleCalculation
+
+FEATURES:
+  - Operands:
+      type: mandatory
+      parent: SimpleCalculation
+      reqs: ~
+
+  - ThresholdComparison:
+      type: mandatory
+      parent: SimpleCalculation
+      reqs: ~
+
+  - TwoInputs:
+      type: mandatory
+      parent: Operands
+      reqs: 
+        - Two input numbers can be processed.
+
+  - ThreeInputs:
+      type: optional
+      parent: Operands
+      reqs: 
+        - Three input numbers can be processed instead of two.
+    
+  - CompareMax:
+      type: XOR
+      parent: ThresholdComparison
+      reqs: 
+        - The maximum of the absolute values is compared to the threshold.
+    
+  - CompareMin:
+      type: XOR
+      parent: ThresholdComparison
+      reqs: 
+        - The minimum of the absolute values is compared to the threshold.
