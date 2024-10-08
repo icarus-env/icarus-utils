@@ -50,3 +50,9 @@ latex/
 
 # Configured header files
 tests/src/test_paths.h
+
+# Python virtual environment
+venv/
+env/
+.venv/
+.env/
