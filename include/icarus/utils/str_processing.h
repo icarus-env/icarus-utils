@@ -1,8 +1,8 @@
 /**
  * (c) 2024 Houssem Guissouma.
- * Licensed under the BSD-3-Clause License.
+ * Licensed under the MIT License.
  * 
- * @file include/utils/str_processing.h
+ * @file icarus/utils/str_processing.h
  * @brief Declaration of utility functions for string processing.
  */
 #pragma once

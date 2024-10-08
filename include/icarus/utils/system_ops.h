@@ -1,8 +1,8 @@
 /**
  * (c) 2024 Houssem Guissouma.
- * Licensed under the BSD-3-Clause License.
+ * Licensed under the MIT License.
  *
- * @file include/utils/system_ops.h
+ * @file icarus/utils/system_ops.h
  * @brief Declaration of helper functions for basic system operations.
  */
 #pragma once

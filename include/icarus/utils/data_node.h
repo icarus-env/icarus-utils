@@ -1,8 +1,8 @@
 /**
  * (c) 2024 Houssem Guissouma.
- * Licensed under the BSD-3-Clause License.
+ * Licensed under the MIT License.
  *
- * @file include/utils/data_node.h
+ * @file icarus/utils/data_node.h
  * @brief Definition of the class NodeData.
  */
 #pragma once

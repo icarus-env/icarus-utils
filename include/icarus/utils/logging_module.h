@@ -1,8 +1,8 @@
 /**
  * (c) 2024 Houssem Guissouma.
- * Licensed under the BSD-3-Clause license.
+ * Licensed under the MIT license.
  *
- * @file include/icarus/utils/logging_module.h
+ * @file icarus/utils/logging_module.h
  * @brief Definition of the class LoggingModule.
  */
 #pragma once
