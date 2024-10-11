@@ -3,7 +3,7 @@
  * Licensed under the MIT License.
  *
  * @file icarus/utils/system_ops.h
- * @brief Declaration of helper functions for basic system operations.
+ * @brief Declaration of utility functions for basic system operations.
  */
 #pragma once
 
@@ -12,6 +12,9 @@
 #include <vector>
 
 namespace icarus::utils {
+
+/// @addtogroup SystemOps
+/// @{
 
 /**
  * @brief Gets the path of the current running executable.
@@ -95,5 +98,7 @@ void writeStrToFile(const std::string& str, const std::string& file_path);
  * @returns True if the file exists and has the correct extension, false otherwise.
  */
 bool isValidFile(const std::string& file_path, const std::string& extension);
+
+/** @} */ // group SystemOps
 
 } // namespace icarus::utils

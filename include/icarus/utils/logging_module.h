@@ -16,6 +16,8 @@ namespace icarus {
 
 /**
  * @brief Module of the ICARUS environment with logging capabilities.
+ * 
+ * @ingroup Logging
  */
 class LoggingModule {
 public:

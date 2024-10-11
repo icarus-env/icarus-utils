@@ -25,13 +25,15 @@ jobs:
   # "build" job
   # =========================
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Install Doxygen
-        run: sudo apt-get update && sudo apt-get install doxygen graphviz
+        run: |
+          sudo apt-get update 
+          sudo apt-get install doxygen graphviz
 
       - name: Generate Documentation
         run: |

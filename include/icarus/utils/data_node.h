@@ -22,6 +22,7 @@ namespace icarus {
  * @brief Node in a YAML/JSON data structure.
  * 
  * This class is a wrapper around the Ryml library for YAML parsing and emitting.
+ * @ingroup StructuredData
  */
 class DataNode {
 public:

@@ -2,8 +2,9 @@ DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "icarus-utils"
 PROJECT_BRIEF          = "General-purpose modules for abstraction and utility used in the ICARUS environment"
 AUTOLINK_SUPPORT       = NO
-INPUT                  = ../include
-FILE_PATTERNS          = *.h *.cpp
+INPUT                  = ../include \
+						 examples/
+FILE_PATTERNS          = *.h *.cpp *.md
 RECURSIVE              = YES
 
 # Build related configuration options

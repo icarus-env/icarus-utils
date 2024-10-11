@@ -12,6 +12,9 @@
 
 namespace icarus::utils {
 
+/// @addtogroup StringProcessing
+/// @{
+
 /**
  * @brief Trims leading and trailing whitespaces from a string.
  * 
@@ -77,5 +80,7 @@ void removeStringsFromVector(std::vector<std::string>& source,
  * @param indent The indentation string.
  */
 void printIndentedString(const std::string& message, const std::string& indent);
+
+/** @} */ // group StringProcessing
 
 } // namespace icarus::utils
