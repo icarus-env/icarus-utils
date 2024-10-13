@@ -23,6 +23,9 @@ jobs:
       build-dir: ${{ steps.strings.outputs.build-dir }}
 
     steps:
+      # -------------------------
+      # Build phase
+      # -------------------------
       - uses: actions/checkout@v4
 
       - name: Set reusable string outputs
@@ -55,45 +58,14 @@ jobs:
       - name: CMake build
         run: cmake --build ${{ steps.strings.outputs.build-dir }}
 
-      - name: Upload the build folder as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: build_folder_${{ matrix.compiler }}
-          path: |
-            ${{ steps.strings.outputs.build-dir }}
-
-  # =========================
-  # "test" job
-  # =========================
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        compiler: [gcc, clang]
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Download the build folder artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: build_folder_${{ matrix.compiler }}
-          path: ${{ needs.build.outputs.build-dir }}
-
-      - name: Make test files executable
-        working-directory: ${{ needs.build.outputs.build-dir }}/bin
-        run: |
-          chmod +x icarus-utils-tests
-
+      # -------------------------
+      # Test phase
+      # -------------------------
       - name: Test
         working-directory: ${{ needs.build.outputs.build-dir }}
         run: |
           ctest --output-on-failure
 
-      # =========================
-      # Test coverage
-      # =========================
       - name: Install coverage tool (gcovr)
         if: matrix.compiler == 'gcc'
         run: |
@@ -104,16 +76,6 @@ jobs:
         working-directory: ${{ needs.build.outputs.build-dir }}
         run: |
           gcovr --xml-pretty -e '/.*/build/' -e '/.*/tests/' --exclude-unreachable-branches --print-summary -o coverage.xml -r ${{ github.workspace }}
-
-      - name: Upload coverage report
-        if: matrix.compiler == 'gcc'
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-report
-          path: ${{ needs.build.outputs.build-dir }}/coverage.xml
-
-      - name: List build directory
-        run: ls -R ${{ needs.build.outputs.build-dir }}
 
       - name: Upload coverage to Codecov
         if: matrix.compiler == 'gcc'

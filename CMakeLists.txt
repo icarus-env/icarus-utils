@@ -20,7 +20,7 @@ project(icarus-utils
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-set(ICARUS-UTILS_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+set(ICARUSUTILS_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Directories for build output and installation
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -53,10 +53,3 @@ endif()
 # Add component(s)
 # =====================================
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src)
-
-# =====================================
-# Add test executable(s)
-# =====================================
-if(BUILD_TESTING)
-    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
-endif()

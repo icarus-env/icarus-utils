@@ -14,14 +14,14 @@
 namespace icarus {
 
 LoggingModule::LoggingModule(const std::string& logger_name, bool is_colored)
-	: logger_(spdlog::stdout_color_mt(logger_name)) {
+		: logger_(spdlog::stdout_color_mt(logger_name)) {
 	if (!is_colored) {
 		logger_ = std::make_shared<spdlog::logger>(logger_name);
 	}
 }
 
 LoggingModule::LoggingModule(std::shared_ptr<spdlog::logger> logger)
-	: logger_(logger) {}
+		: logger_(logger) {}
 
 LoggingModule::~LoggingModule() {
 	if (logger_) {
@@ -31,6 +31,13 @@ LoggingModule::~LoggingModule() {
 
 std::shared_ptr<spdlog::logger> LoggingModule::getLogger() const {
 	return logger_;
+}
+
+std::string LoggingModule::getLoggerName() const {
+	if (logger_) {
+		return logger_->name();
+	}
+	return {};
 }
 
 void LoggingModule::setLogger(std::shared_ptr<spdlog::logger> logger) {

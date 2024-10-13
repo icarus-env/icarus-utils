@@ -44,12 +44,19 @@ public:
 	/**
 	 * @brief Returns the logger of the module.
 	 * 
-	 * @return Shared pointer to the logger of the module.
+	 * @returns Shared pointer to the logger of the module.
 	 */
 	std::shared_ptr<spdlog::logger> getLogger() const;
 
 	/**
-	 * @brief Sets the logger of the GUI module.
+	 * @brief Returns the name of the logger.
+	 *
+	 * @returns The name of the logger.
+	 */
+	std::string getLoggerName() const;
+
+	/**
+	 * @brief Sets the logger of the module.
 	 * 
 	 * @param logger Logger to be set as shared pointer.
 	 */

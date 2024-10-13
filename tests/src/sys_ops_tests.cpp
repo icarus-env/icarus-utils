@@ -2,7 +2,7 @@
  * (c) 2024 Houssem Guissouma.
  * Licensed under the BSD-3-Clause License.
  * 
- * @file tests/src/utils/sys_ops_tests.cpp
+ * @file tests/src/sys_ops_tests.cpp
  * @brief Definition of the test cases of the test suite SysOpsTests.
  */
 #include <filesystem>
