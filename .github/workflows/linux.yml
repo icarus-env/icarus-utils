@@ -62,7 +62,7 @@ jobs:
       # Test phase
       # -------------------------
       - name: Test
-        working-directory: ${{ needs.build.outputs.build-dir }}
+        working-directory: ${{ steps.strings.outputs.build-dir }}
         run: |
           ctest --output-on-failure
 
@@ -73,7 +73,7 @@ jobs:
 
       - name: Generate coverage report
         if: matrix.compiler == 'gcc'
-        working-directory: ${{ needs.build.outputs.build-dir }}
+        working-directory: ${{ steps.strings.outputs.build-dir }}
         run: |
           gcovr --xml-pretty -e '/.*/build/' -e '/.*/tests/' --exclude-unreachable-branches --print-summary -o coverage.xml -r ${{ github.workspace }}
 
@@ -82,7 +82,7 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           # Upload the previously generated coverage report
-          file: ${{ needs.build.outputs.build-dir }}/coverage.xml
+          file: ${{ steps.strings.outputs.build-dir }}/coverage.xml
           disable_search: true
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
